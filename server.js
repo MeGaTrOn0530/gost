@@ -13,14 +13,18 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3000
 
-// CORS ni to'g'ri sozlash - frontend uchun
+// server.js faylida CORS sozlamalarini yangilash
 app.use(
   cors({
-    origin: ["https://your-frontend-url.vercel.app", "http://localhost:3000"], // Frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: [
+      "https://68224b77e1ae317febbcef73--papaya-concha-4b8dbf.netlify.app", 
+      "https://papaya-concha-4b8dbf.netlify.app", // Asosiy domen
+      "http://localhost:3000"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // Cookie yuborish uchun
-  }),
+    credentials: true,
+  })
 )
 
 app.use(bodyParser.json())
