@@ -4,6 +4,8 @@ const fs = require("fs")
 const path = require("path")
 const dotenv = require("dotenv")
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
+const session = require("express-session")
 
 // Load environment variables
 dotenv.config()
@@ -11,31 +13,46 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 3000
 
-// CORS ni to'g'ri sozlash - har qanday frontenddan so'rovlarni qabul qilish uchun
+// CORS ni to'g'ri sozlash - frontend uchun
 app.use(
   cors({
-    origin: "*", // Barcha originlardan so'rovlarni qabul qilish
+    origin: ["https://your-frontend-url.vercel.app", "http://localhost:3000"], // Frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Cookie yuborish uchun
   }),
 )
 
 app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
+
+// Session sozlamalari
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "your-secret-key",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production", // HTTPS uchun
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000, // 1 kun
+    },
+  }),
+)
 
 // Data papkalarini aniqlash
 const dataDir = path.join(__dirname, "data")
 const subjectsDir = path.join(dataDir, "subjects")
 const resultsPath = path.join(dataDir, "results.json")
 const usersPath = path.join(dataDir, "users.json")
-
-// Frontend statik fayllarini o'chirish (chunki frontend alohida deploy qilinadi)
-// app.use(express.static(path.join(__dirname, "frontend")))
+const testsDir = path.join(dataDir, "tests")
 
 async function ensureDirectories() {
   try {
     await fs.promises.mkdir(dataDir, { recursive: true })
     await fs.promises.mkdir(subjectsDir, { recursive: true })
+    await fs.promises.mkdir(testsDir, { recursive: true })
 
     // Create empty results file if it doesn't exist
     try {
@@ -61,10 +78,117 @@ app.use((req, res, next) => {
   next()
 })
 
+// Middleware to check if user is authenticated
+const isAuthenticated = (req, res, next) => {
+  if (req.session.user) {
+    next()
+  } else {
+    res.status(401).json({ error: "Unauthorized" })
+  }
+}
+
+// Middleware to check if user is admin
+const isAdmin = (req, res, next) => {
+  if (req.session.user && req.session.user.isAdmin) {
+    next()
+  } else {
+    res.status(403).json({ error: "Forbidden" })
+  }
+}
+
 // API Routes
 
+// Check session
+app.get("/api/auth/check-session", isAuthenticated, (req, res) => {
+  res.json(req.session.user)
+})
+
+// Check admin session
+app.get("/api/auth/check-admin", isAdmin, (req, res) => {
+  res.json(req.session.user)
+})
+
+// Login
+app.post("/api/auth/login", (req, res) => {
+  try {
+    console.log("Login request body:", req.body)
+    const { username, password } = req.body
+
+    const data = fs.readFileSync(usersPath, "utf8")
+    const users = JSON.parse(data)
+
+    const user = users.find((u) => u.username === username && u.password === password)
+
+    if (user) {
+      // Don't send password back to client
+      const { password, ...userWithoutPassword } = user
+
+      // Save user to session
+      req.session.user = userWithoutPassword
+
+      res.json({ success: true, user: userWithoutPassword })
+    } else {
+      res.status(401).json({ success: false, message: "Invalid username or password" })
+    }
+  } catch (error) {
+    console.error("Error during login:", error)
+    res.status(500).json({ error: "Login failed" })
+  }
+})
+
+// Logout
+app.post("/api/auth/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Error destroying session:", err)
+      return res.status(500).json({ error: "Logout failed" })
+    }
+    res.clearCookie("connect.sid")
+    res.json({ success: true })
+  })
+})
+
+// Register
+app.post("/api/auth/register", (req, res) => {
+  try {
+    console.log("Register request body:", req.body)
+    const { username, password, fullName } = req.body
+
+    const data = fs.readFileSync(usersPath, "utf8")
+    const users = JSON.parse(data)
+
+    // Check if username already exists
+    if (users.some((u) => u.username === username)) {
+      return res.status(400).json({ success: false, message: "Username already exists" })
+    }
+
+    const newUser = {
+      id: Date.now(),
+      username,
+      password,
+      fullName,
+      isAdmin: false,
+    }
+
+    users.push(newUser)
+
+    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
+
+    // Don't send password back to client
+    const { password: pwd, ...userWithoutPassword } = newUser
+
+    // Save user to session
+    req.session.user = userWithoutPassword
+
+    res.json({ success: true, user: userWithoutPassword })
+  } catch (error) {
+    console.error("Error during registration:", error)
+    res.status(500).json({ error: "Registration failed" })
+  }
+})
+
 // Find next available subject ID
-app.get("/api/subjects/next-id", (req, res) => {
+app.get("/api/subjects/next-id", isAdmin, (req, res) => {
   try {
     const files = fs.readdirSync(subjectsDir)
     const ids = files
@@ -93,7 +217,7 @@ app.get("/api/subjects/next-id", (req, res) => {
 })
 
 // Get all subjects
-app.get("/api/subjects", (req, res) => {
+app.get("/api/subjects", isAuthenticated, (req, res) => {
   try {
     const files = fs.readdirSync(subjectsDir)
     const subjects = []
@@ -118,7 +242,7 @@ app.get("/api/subjects", (req, res) => {
 })
 
 // Get a specific subject
-app.get("/api/subjects/:id", (req, res) => {
+app.get("/api/subjects/:id", isAuthenticated, (req, res) => {
   try {
     const id = req.params.id
     const filePath = path.join(subjectsDir, `${id}-fan.json`)
@@ -140,8 +264,36 @@ app.get("/api/subjects/:id", (req, res) => {
   }
 })
 
+// Select a subject for testing
+app.post("/api/subjects/select/:id", isAuthenticated, (req, res) => {
+  try {
+    const id = req.params.id
+    const { subjectData } = req.body
+
+    // Save selected subject to session
+    req.session.selectedSubject = {
+      id: Number(id),
+      data: subjectData,
+    }
+
+    res.json({ success: true })
+  } catch (error) {
+    console.error("Error selecting subject:", error)
+    res.status(500).json({ error: "Failed to select subject" })
+  }
+})
+
+// Get selected subject
+app.get("/api/subjects/selected", isAuthenticated, (req, res) => {
+  if (!req.session.selectedSubject) {
+    return res.status(404).json({ error: "No subject selected" })
+  }
+
+  res.json(req.session.selectedSubject)
+})
+
 // Create or update a subject
-app.post("/api/subjects/:id", (req, res) => {
+app.post("/api/subjects/:id", isAdmin, (req, res) => {
   try {
     const id = req.params.id
     const subject = req.body
@@ -160,7 +312,7 @@ app.post("/api/subjects/:id", (req, res) => {
 })
 
 // Delete a subject
-app.delete("/api/subjects/:id", (req, res) => {
+app.delete("/api/subjects/:id", isAdmin, (req, res) => {
   try {
     const id = req.params.id
     const filePath = path.join(subjectsDir, `${id}-fan.json`)
@@ -181,11 +333,103 @@ app.delete("/api/subjects/:id", (req, res) => {
   }
 })
 
+// Save test state
+app.post("/api/tests/save-state", isAuthenticated, (req, res) => {
+  try {
+    const userId = req.session.user.id
+    const testData = req.body
+
+    const filePath = path.join(testsDir, `${userId}-test.json`)
+    fs.writeFileSync(filePath, JSON.stringify(testData, null, 2))
+
+    res.json({ success: true })
+  } catch (error) {
+    console.error("Error saving test state:", error)
+    res.status(500).json({ error: "Failed to save test state" })
+  }
+})
+
+// Save test answer
+app.post("/api/tests/save-answer", isAuthenticated, (req, res) => {
+  try {
+    const userId = req.session.user.id
+    const { questionIndex, answer } = req.body
+
+    const filePath = path.join(testsDir, `${userId}-test.json`)
+
+    // Read current test data
+    const testData = JSON.parse(fs.readFileSync(filePath, "utf8"))
+
+    // Update answer
+    testData.userAnswers[questionIndex] = answer
+
+    // Save updated test data
+    fs.writeFileSync(filePath, JSON.stringify(testData, null, 2))
+
+    res.json({ success: true })
+  } catch (error) {
+    console.error("Error saving answer:", error)
+    res.status(500).json({ error: "Failed to save answer" })
+  }
+})
+
+// Save timer state
+app.post("/api/tests/save-timer", isAuthenticated, (req, res) => {
+  try {
+    const userId = req.session.user.id
+    const { timeLeft } = req.body
+
+    const filePath = path.join(testsDir, `${userId}-test.json`)
+
+    // Read current test data
+    const testData = JSON.parse(fs.readFileSync(filePath, "utf8"))
+
+    // Update timer
+    testData.timeLeft = timeLeft
+
+    // Save updated test data
+    fs.writeFileSync(filePath, JSON.stringify(testData, null, 2))
+
+    res.json({ success: true })
+  } catch (error) {
+    console.error("Error saving timer state:", error)
+    res.status(500).json({ error: "Failed to save timer state" })
+  }
+})
+
+// Clear test state
+app.post("/api/tests/clear-state", isAuthenticated, (req, res) => {
+  try {
+    const userId = req.session.user.id
+    const filePath = path.join(testsDir, `${userId}-test.json`)
+
+    // Delete test data file if exists
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath)
+    }
+
+    // Clear selected subject from session
+    delete req.session.selectedSubject
+
+    res.json({ success: true })
+  } catch (error) {
+    console.error("Error clearing test state:", error)
+    res.status(500).json({ error: "Failed to clear test state" })
+  }
+})
+
 // Get all results
-app.get("/api/results", (req, res) => {
+app.get("/api/results", isAuthenticated, (req, res) => {
   try {
     const data = fs.readFileSync(resultsPath, "utf8")
     const results = JSON.parse(data)
+
+    // If user is not admin, only return their results
+    if (!req.session.user.isAdmin) {
+      const userResults = results.filter((result) => result.studentName === req.session.user.fullName)
+      return res.json(userResults)
+    }
+
     res.json(results)
   } catch (error) {
     console.error("Error getting results:", error)
@@ -193,14 +437,13 @@ app.get("/api/results", (req, res) => {
   }
 })
 
-// Get results for a specific user
-app.get("/api/results/user/:username", (req, res) => {
+// Get results for current user
+app.get("/api/results/user", isAuthenticated, (req, res) => {
   try {
-    const username = req.params.username
     const data = fs.readFileSync(resultsPath, "utf8")
     const results = JSON.parse(data)
 
-    const userResults = results.filter((result) => result.studentName === username)
+    const userResults = results.filter((result) => result.studentName === req.session.user.fullName)
     res.json(userResults)
   } catch (error) {
     console.error("Error getting user results:", error)
@@ -209,13 +452,16 @@ app.get("/api/results/user/:username", (req, res) => {
 })
 
 // Add a new result
-app.post("/api/results", (req, res) => {
+app.post("/api/results", isAuthenticated, (req, res) => {
   try {
     const newResult = req.body
 
-    // Add id and date if not provided
+    // Add id, studentName and date if not provided
     if (!newResult.id) {
       newResult.id = Date.now()
+    }
+    if (!newResult.studentName) {
+      newResult.studentName = req.session.user.fullName
     }
     if (!newResult.date) {
       newResult.date = new Date().toISOString()
@@ -232,65 +478,6 @@ app.post("/api/results", (req, res) => {
   } catch (error) {
     console.error("Error adding result:", error)
     res.status(500).json({ error: "Failed to add result" })
-  }
-})
-
-// User authentication
-app.post("/api/auth/login", (req, res) => {
-  try {
-    console.log("Login request body:", req.body)
-    const { username, password } = req.body
-
-    const data = fs.readFileSync(usersPath, "utf8")
-    const users = JSON.parse(data)
-
-    const user = users.find((u) => u.username === username && u.password === password)
-
-    if (user) {
-      // Don't send password back to client
-      const { password, ...userWithoutPassword } = user
-      res.json({ success: true, user: userWithoutPassword })
-    } else {
-      res.status(401).json({ success: false, message: "Invalid username or password" })
-    }
-  } catch (error) {
-    console.error("Error during login:", error)
-    res.status(500).json({ error: "Login failed" })
-  }
-})
-
-// Register a new user
-app.post("/api/auth/register", (req, res) => {
-  try {
-    console.log("Register request body:", req.body)
-    const { username, password, fullName } = req.body
-
-    const data = fs.readFileSync(usersPath, "utf8")
-    const users = JSON.parse(data)
-
-    // Check if username already exists
-    if (users.some((u) => u.username === username)) {
-      return res.status(400).json({ success: false, message: "Username already exists" })
-    }
-
-    const newUser = {
-      id: Date.now(),
-      username,
-      password,
-      fullName,
-      isAdmin: false,
-    }
-
-    users.push(newUser)
-
-    fs.writeFileSync(usersPath, JSON.stringify(users, null, 2))
-
-    // Don't send password back to client
-    const { password: pwd, ...userWithoutPassword } = newUser
-    res.json({ success: true, user: userWithoutPassword })
-  } catch (error) {
-    console.error("Error during registration:", error)
-    res.status(500).json({ error: "Registration failed" })
   }
 })
 
