@@ -1,0 +1,1010 @@
+{
+  "title": "2025 State Exam Questions on Country Study for the 4-th-year Students of MBTXT Specialty",
+  "testCount": 10,
+  "timeLimit": 12,
+  "attempts": 1,
+  "cooldownTime": 12,
+  "passingScore": 60,
+  "questions": [
+    {
+      "question": "What is the primary purpose of a country study?",
+      "options": [
+        "To analyze individual citizens",
+        "To understand a country's culture and characteristics",
+        "To create international laws",
+        "To promote tourism"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which of the following is NOT typically included in a country study?",
+      "options": [
+        "Geography",
+        "Natural resources",
+        "Personal opinions of citizens",
+        "History"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Great Britain is located off the northwestern coast of which continent?",
+      "options": [
+        "Asia",
+        "Africa",
+        "Europe",
+        "South America"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What body of water separates Great Britain from mainland Europe?",
+      "options": [
+        "Atlantic Ocean",
+        "North Sea",
+        "English Channel",
+        "Mediterranean Sea"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "As of 2023, what is the approximate population of Great Britain?",
+      "options": [
+        "30 million",
+        "50 million",
+        "70 million",
+        "90 million"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which natural resource is most abundant in Great Britain?",
+      "options": [
+        "Oil",
+        "Coal",
+        "Gold",
+        "Diamonds"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "The USA is bordered by which two oceans?",
+      "options": [
+        "Atlantic and Indian Oceans",
+        "Pacific and Atlantic Oceans",
+        "Arctic and Indian Oceans",
+        "Southern and Pacific Oceans"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the capital city of Canada?",
+      "options": [
+        "Toronto",
+        "Vancouver",
+        "Ottawa",
+        "Montreal"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which of the following is a major natural resource found in Canada?",
+      "options": [
+        "Coal",
+        "Gold",
+        "Timber",
+        "All options correct"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "question": "As of 2023, what is the approximate population of the USA?",
+      "options": [
+        "300 million",
+        "330 million",
+        "350 million",
+        "400 million"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Australia is located in which hemisphere?",
+      "options": [
+        "Northern Hemisphere",
+        "Southern Hemisphere",
+        "Eastern Hemisphere",
+        "Western Hemisphere"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the capital city of New Zealand?",
+      "options": [
+        "Auckland",
+        "Wellington",
+        "Christchurch",
+        "Dunedin"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which natural resource is Australia known for exporting?",
+      "options": [
+        "Oil",
+        "Natural gas",
+        "Coal",
+        "All of the above"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "question": "As of 2023, what is the approximate population of Australia?",
+      "options": [
+        "20 million",
+        "25 million",
+        "30 million",
+        "35 million"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which event marked the beginning of the Tudor dynasty in England?",
+      "options": [
+        "The signing of the Magna Carta",
+        "The Battle of Hastings",
+        "The War of the Roses",
+        "The English Civil War"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Who was the first monarch of the United Kingdom?",
+      "options": [
+        "Elizabeth I",
+        "James I",
+        "Henry VIII",
+        "Victoria I"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What was the main cause of the English Civil War?",
+      "options": [
+        "Religious differences",
+        "Taxation without representation",
+        "Monarchical power vs. parliamentary power",
+        "Land disputes"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which document limited the powers of the monarchy in England in 1215?",
+      "options": [
+        "The Bill of Rights",
+        "The Magna Carta",
+        "The Act of Union",
+        "The Petition of Right"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What year did the United States declare independence from Britain?",
+      "options": [
+        "1776",
+        "1783",
+        "1791",
+        "1800"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who was the first President of the United States?",
+      "options": [
+        "Thomas Jefferson",
+        "Abraham Lincoln",
+        "George Washington",
+        "John Adams"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which war was fought to end slavery in the United States?",
+      "options": [
+        "The Revolutionary War",
+        "The War of 1812",
+        "The Civil War",
+        "The Spanish-American War"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What was the primary cause of the Great Depression in the USA?",
+      "options": [
+        "World War I",
+        "Stock market crash of 1929",
+        "Agricultural failure",
+        "Industrial strikes"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "When did Canada become a self-governing dominion within the British Empire?",
+      "options": [
+        "1867",
+        "1776",
+        "1905",
+        "1949"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What was the main reason for French colonization in Canada?",
+      "options": [
+        "Gold mining",
+        "Fur trade",
+        "Agriculture",
+        "Religious freedom"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Who were the original inhabitants of Canada?",
+      "options": [
+        "Vikings",
+        "Indigenous peoples",
+        "French settlers",
+        "British colonists"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What significant event occurred in Canada in 1982?",
+      "options": [
+        "Confederation",
+        "Constitution Act",
+        "Quebec Referendum",
+        "Independence Day"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which industry is a significant part of Great Britain's economy?",
+      "options": [
+        "Agriculture",
+        "Technology",
+        "Financial services",
+        "Fishing"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What is the national sport of England?",
+      "options": [
+        "Cricket",
+        "Football (Soccer)",
+        "Rugby",
+        "Tennis"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which newspaper is known as one of the oldest in Great Britain?",
+      "options": [
+        "The Guardian",
+        "The Times",
+        "The Sun",
+        "The Daily Mail"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What major sporting event takes place every four years in Great Britain?",
+      "options": [
+        "The World Cup",
+        "The Commonwealth Games",
+        "Wimbledon",
+        "The Six Nations Championship"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What sector contributes most to the US economy?",
+      "options": [
+        "Agriculture",
+        "Manufacturing",
+        "Services",
+        "Mining"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which sport is considered America's pastime?",
+      "options": [
+        "Basketball",
+        "Soccer",
+        "Baseball",
+        "Football"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What is the name of the largest media conglomerate in the USA?",
+      "options": [
+        "Disney",
+        "Comcast",
+        "News Corp",
+        "ViacomCBS"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In which city is Wall Street located?",
+      "options": [
+        "Chicago",
+        "San Francisco",
+        "New York City",
+        "Washington, D.C."
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which natural resource is a key driver of Canada's economy?",
+      "options": [
+        "Oil",
+        "Timber",
+        "Minerals",
+        "All of the above"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "question": "What sport is considered Canada's national winter sport?",
+      "options": [
+        "Ice hockey",
+        "Skiing",
+        "Curling",
+        "Snowboarding"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which Canadian television network is known for its national news coverage?",
+      "options": [
+        "CBC",
+        "CTV",
+        "Global TV",
+        "Citytv"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What percentage of Canada's GDP comes from natural resources?",
+      "options": [
+        "around 5%",
+        "around 15%",
+        "around 60%",
+        "around 80%"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is Australia's largest export product?",
+      "options": [
+        "Wheat",
+        "Iron ore",
+        "Gold",
+        "Coal"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which sport is most popular in Australia?",
+      "options": [
+        "Rugby",
+        "Australian Rules Football",
+        "Cricket",
+        "Soccer"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What major media company (or companies) are based in Australia?",
+      "options": [
+        "News Corp Australia",
+        "BBC Australia",
+        "Nine Entertainment",
+        "News Corp Australia and Nine Entertainment"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "question": "What is New Zealand's primary agricultural export?",
+      "options": [
+        "Dairy products",
+        "Wine",
+        "Wool",
+        "Fish"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which meal is traditionally eaten at noon in Great Britain?",
+      "options": [
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Tea"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the most popular social activity in British culture during weekends?",
+      "options": [
+        "Shopping at malls",
+        "Going to pubs",
+        "Watching movies at home",
+        "Attending sports events"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which holiday is widely celebrated across Great Britain with parades and festivities?",
+      "options": [
+        "Halloween",
+        "Christmas",
+        "Bonfire Night",
+        "Thanksgiving"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What type of cuisine has become increasingly popular in Great Britain over recent decades?",
+      "options": [
+        "Traditional British dishes only",
+        "Fast food only",
+        "International cuisine (e.g., Indian, Chinese, Italian)",
+        "None of the options correct"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which social event is commonly associated with American culture during summer months?",
+      "options": [
+        "Barbecues and picnics",
+        "Christmas parties",
+        "Halloween celebrations",
+        "Thanksgiving dinners"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In which country is it customary to tip service workers at restaurants?",
+      "options": [
+        "UK",
+        "Canada",
+        "Australia",
+        "All options correct"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "question": "What is a common form of greeting in English-speaking countries?",
+      "options": [
+        "Bowing",
+        "Handshaking",
+        "Kissing on both cheeks",
+        "Nodding"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which holiday is celebrated on July 4th?",
+      "options": [
+        "Independence Day (USA)",
+        "Canada Day (Canada)",
+        "Bastille Day (France)",
+        "Australia Day (Australia)"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In American culture, what does \"tailgating\" refer to?",
+      "options": [
+        "Camping near a lake",
+        "Celebrating before a sports event in parking lots",
+        "Driving too closely behind another vehicle",
+        "Having a picnic in a park"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which meal is typically considered the most important meal of the day in American culture?",
+      "options": [
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Brunch"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In Uzbekistan, what traditional dish is often served at weddings?",
+      "options": [
+        "Pizza",
+        "Plov",
+        "Sushi",
+        "Tacos"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "How do people typically greet each other in Uzbekistan?",
+      "options": [
+        "With a handshake",
+        "With a hug",
+        "With a kiss on both cheeks",
+        "With a nod"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In American culture, what does \"Black Friday\" refer to?",
+      "options": [
+        "The day after Thanksgiving with major sales",
+        "An environmental awareness day",
+        "The day when taxes are due",
+        "An important historical event"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What type of music originated from African American communities and became popular in the USA?",
+      "options": [
+        "Jazz",
+        "Classical",
+        "Country",
+        "Folk"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In Uzbekistan, what language do most people speak?",
+      "options": [
+        "Russian",
+        "Uzbek",
+        "Tajik",
+        "Kazakh"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Which American holiday involves fireworks displays?",
+      "options": [
+        "Thanksgiving",
+        "Independence Day",
+        "Halloween",
+        "Labor Day"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "In American culture, what does \"dinner\" typically refer to?",
+      "options": [
+        "The first meal of the day",
+        "The main meal usually eaten in the evening",
+        "Any meal eaten throughout the day",
+        "Lunch served at noon"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What traditional drink is often served at Uzbek meals?",
+      "options": [
+        "Tea",
+        "Coffee",
+        "Juice",
+        "Water"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who wrote \"Pride and Prejudice\"?",
+      "options": [
+        "Jane Austen",
+        "Charles Dickens",
+        "Emily Brontë",
+        "Mark Twain"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What currency is used in Canada?",
+      "options": [
+        "US Dollar",
+        "Euro",
+        "Canadian Dollar",
+        "Pound Sterling"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which city is known as \"The Big Apple\"?",
+      "options": [
+        "Los Angeles",
+        "Chicago",
+        "New York City",
+        "Miami"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Who was Winston Churchill?",
+      "options": [
+        "An American president",
+        "The British Prime Minister during World War II",
+        "An Australian prime minister",
+        "The first monarch of Canada"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is a common feature of Australian wildlife?",
+      "options": [
+        "It includes kangaroos and koalas",
+        "It includes polar bears",
+        "It includes elephants",
+        "It includes tigers"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who was Canada's first Prime Minister?",
+      "options": [
+        "John A. Macdonald",
+        "Pierre Trudeau",
+        "Wilfrid Laurier",
+        "Stephen Harper"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What major conflict did Canada participate in during World War I?",
+      "options": [
+        "The Korean War",
+        "The Vietnam War",
+        "The Battle of Vimy Ridge",
+        "The Gulf War"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "In which year did Australia become a federation?",
+      "options": [
+        "1901",
+        "1914",
+        "1945",
+        "1960"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which British monarch reigned during World War II?",
+      "options": [
+        "Queen Victoria",
+        "King George VI",
+        "Queen Elizabeth II",
+        "King Edward VIII"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What type of government does Canada have?",
+      "options": [
+        "Monarchy",
+        "Republic",
+        "Constitutional monarchy",
+        "Dictatorship"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which festival celebrates the arrival of spring in Uzbekistan?",
+      "options": [
+        "Navruz",
+        "Diwali",
+        "Christmas",
+        "Thanksgiving"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who invented basketball?",
+      "options": [
+        "James Naismith",
+        "Michael Jordan",
+        "LeBron James",
+        "Kobe Bryant"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which ocean borders both Australia and New Zealand?",
+      "options": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What major Canadian city hosted the Winter Olympics in 2010?",
+      "options": [
+        "Toronto",
+        "Vancouver",
+        "Calgary",
+        "Montreal"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "In which year did the first women gain the right to vote in Great Britain?",
+      "options": [
+        "1918",
+        "1938",
+        "1945",
+        "1960"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which animal is a national symbol of Australia?",
+      "options": [
+        "Kangaroo",
+        "Emu",
+        "Koala",
+        "Both kangaroo and emu"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "question": "Where did jazz music originate?",
+      "options": [
+        "New Orleans, USA",
+        "London, UK",
+        "Sydney, Australia",
+        "Toronto, Canada"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is Canada's official bilingual language policy?",
+      "options": [
+        "English only",
+        "French only",
+        "English and French",
+        "English, French, and Spanish"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Who was known as \"the Iron Lady\"?",
+      "options": [
+        "Margaret Thatcher",
+        "Angela Merkel",
+        "Indira Gandhi",
+        "Hillary Clinton"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which sport originated from England and involves hitting a ball with a bat?",
+      "options": [
+        "Cricket",
+        "Rugby",
+        "Tennis",
+        "Golf"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Where are most Canadian provinces located?",
+      "options": [
+        "East Coast",
+        "West Coast",
+        "Central Canada",
+        "Northern Canada"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What currency does Australia use?",
+      "options": [
+        "US Dollar",
+        "Australian Dollar",
+        "Euro",
+        "British Pound"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What event led to Canada's entry into World War I?",
+      "options": [
+        "Pearl Harbor",
+        "The assassination of Archduke Franz Ferdinand",
+        "The sinking of Lusitania",
+        "The invasion of Poland"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "In which year did Australia become a Commonwealth?",
+      "options": [
+        "1901",
+        "1914",
+        "1945",
+        "1960"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who wrote \"The Great Gatsby\"?",
+      "options": [
+        "F.Scott Fitzgerald",
+        "Ernest Hemingway",
+        "Mark Twain",
+        "John Steinbeck"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What type of government does Australia have?",
+      "options": [
+        "Republic",
+        "Constitutional monarchy",
+        "Dictatorship",
+        "Federal state"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "In which city would you find Buckingham Palace?",
+      "options": [
+        "London",
+        "Edinburgh",
+        "Cardiff",
+        "Belfast"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who was Canada's first female Prime Minister?",
+      "options": [
+        "Kim Campbell",
+        "Margaret Thatcher",
+        "Ellen Fairclough",
+        "Chrétien Jean"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which country has a tradition called \"Thanksgiving\"?",
+      "options": [
+        "Canada",
+        "USA",
+        "Canada and USA",
+        "None"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What year did New Zealand grant women the right to vote?",
+      "options": [
+        "1893",
+        "1917",
+        "1945",
+        "1960"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In which sport do teams compete for the Stanley Cup?",
+      "options": [
+        "Baseball",
+        "Basketball",
+        "Ice Hockey",
+        "Football"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "Which British city is known for its historic university?",
+      "options": [
+        "London",
+        "Oxford",
+        "Manchester",
+        "Liverpool"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Where was rugby invented?",
+      "options": [
+        "England",
+        "France",
+        "New Zealand",
+        "Australia"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Who was known for his role in civil rights movements in America during the 1960s?",
+      "options": [
+        "Martin Luther King Jr.",
+        "Malcolm X",
+        "Nelson Mandela",
+        "Rosa Parks"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What does \"pavlova\" refer to in Australian cuisine?",
+      "options": [
+        "Dessert",
+        "Main course",
+        "Beverage",
+        "Appetizer"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "In which country would you find \"Haka,\" a traditional war dance?",
+      "options": [
+        "Australia",
+        "New Zealand",
+        "Fiji",
+        "Samoa"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Who was responsible for introducing democracy to ancient Athens?",
+      "options": [
+        "Socrates",
+        "Plato",
+        "Cleisthenes",
+        "Aristotle"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "question": "What year did World War II end?",
+      "options": [
+        "1939",
+        "1945",
+        "1950",
+        "1960"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "Who was known as \"The Father of Modern Physics\"?",
+      "options": [
+        "Isaac Newton",
+        "Albert Einstein",
+        "Galileo Galilei",
+        "Niels Bohr"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "Which document outlines the fundamental rights and freedoms guaranteed to individuals in Canada?",
+      "options": [
+        "Constitution Act",
+        "Bill of Rights",
+        "Charter of Rights and Freedoms",
+        "Magna Carta"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

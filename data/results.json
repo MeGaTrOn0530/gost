@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1747074609273,
+    "studentName": "a",
+    "subjectId": 1,
+    "score": 40,
+    "passed": false,
+    "date": "2025-05-12T18:30:09.273Z"
+  },
+  {
+    "id": 1747075569657,
+    "studentName": "1",
+    "subjectId": 1,
+    "score": 50,
+    "passed": false,
+    "date": "2025-05-12T18:46:09.657Z"
+  }
+]

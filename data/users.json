@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "admin123",
+    "fullName": "Administrator",
+    "isAdmin": true
+  },
+  {
+    "id": 1747073224308,
+    "username": "a",
+    "password": "a",
+    "fullName": "a",
+    "isAdmin": false
+  },
+  {
+    "id": 1747075479881,
+    "username": "1",
+    "password": "1",
+    "fullName": "1",
+    "isAdmin": false
+  }
+]
