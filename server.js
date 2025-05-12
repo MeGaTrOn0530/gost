@@ -21,6 +21,7 @@ app.use(
     origin: [
       "https://papaya-concha-4b8dbf.netlify.app",
       "https://68224b77e1ae317febbcef73--papaya-concha-4b8dbf.netlify.app", 
+      "https://gost2025.netlify.app",  // Yangi URL qo'shildi
       "http://localhost:3000"
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
